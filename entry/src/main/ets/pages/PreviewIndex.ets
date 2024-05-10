@@ -6,7 +6,7 @@ struct  PreviewIndex{
 
   enterLogin(){
     router.replaceUrl({
-      url:'pages/Login',
+      url:'pages/login/login',
     })
   }
 

@@ -2,6 +2,6 @@
   "src": [
     "pages/Index",
     "pages/PreviewIndex",
-    "pages/Login"
+    "pages/login/login"
   ]
 }
