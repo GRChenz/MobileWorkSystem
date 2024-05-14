@@ -2,7 +2,6 @@
   "src": [
     "pages/Index",
     "pages/PreviewIndex",
-    "pages/login/login",
-    "pages/officeWork/officeWork"
+    "pages/login/login"
   ]
 }

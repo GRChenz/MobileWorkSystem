@@ -1,10 +1,9 @@
-import BottomCard from '../../view/officeWork/bottomCard'
-import MiddleCard from '../../view/officeWork/middleCard'
-import OfficeWorkHead from '../../view/officeWork/officeWorkHead'
+import BottomCard from '../../../view/officeWork/bottomCard'
+import MiddleCard from '../../../view/officeWork/middleCard'
+import OfficeWorkHead from '../../../view/officeWork/officeWorkHead'
 
-@Entry
 @Component
-struct OfficeWork {
+export default struct OfficeWork {
 
   build() {
     Scroll(){

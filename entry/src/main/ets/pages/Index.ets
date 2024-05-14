@@ -1,12 +1,13 @@
 import contactsIndex from '../component/indexComponent/contactsIndex'
 import messageIndex from '../component/indexComponent/messageIndex'
 import myIndex from '../component/indexComponent/myIndex'
-import workIndex from '../component/indexComponent/workIndex'
+import OfficeWork from '../component/indexComponent/officeWork/officeWork'
 
 class tabBarItem{
   id:number
   text:string
   icon:Resource
+
 
   constructor(id:number,text:string,icon:Resource) {
     this.id=id
@@ -62,7 +63,7 @@ struct Index {
   //页面TabContentBuild
   @Builder TabContentBuild($$:{id:number}){
     if($$.id===0){
-      workIndex()
+      OfficeWork()
     }else if($$.id===1){
       messageIndex()
     }else if($$.id===2){
