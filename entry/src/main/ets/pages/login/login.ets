@@ -1,3 +1,5 @@
+import router from '@ohos.router'
+
 @Entry
 @Component
 struct Login {
@@ -59,6 +61,9 @@ struct Login {
                   // 提交按钮操作
                   console.log('testTag','login','username',this.username)
                   console.log('testTag','login','password',this.password)
+                  router.replaceUrl({
+                    url:"pages/Index"
+                  })
                 })
                   .backgroundColor('#170bbd')
                   .width(250)
