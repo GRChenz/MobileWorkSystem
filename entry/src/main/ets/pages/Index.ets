@@ -1,6 +1,6 @@
 import contactsIndex from '../component/indexComponent/contactsIndex'
 import messageIndex from '../component/indexComponent/messageIndex'
-import myIndex from '../component/indexComponent/myIndex'
+import myIndex from '../component/indexComponent/myindex/myIndex'
 import OfficeWork from '../component/indexComponent/officeWork/officeWork'
 
 class tabBarItem{
