@@ -1,15 +1,15 @@
 import contactsIndex from '../component/indexComponent/contactsIndex'
 import messageIndex from '../component/indexComponent/messageIndex'
-import myIndex from '../component/indexComponent/myindex/myIndex'
-import OfficeWork from '../component/indexComponent/officeWork/officeWork'
+import myIndex from './myindex/myIndex'
+import OfficeWork from './officeWork/officeWork'
 
 class tabBarItem{
   id:number
   text:string
-  icon:Resource
+  icon:ResourceStr
 
 
-  constructor(id:number,text:string,icon:Resource) {
+  constructor(id:number,text:string,icon:ResourceStr) {
     this.id=id
     this.text=text
     this.icon=icon
@@ -20,6 +20,7 @@ class tabBarItem{
 @Entry
 @Component
 struct Index {
+  @Provide currentIndex:number = 0;
 
   tabBarItems:tabBarItem[]=[
     {id:0,text:'办公',icon:$r('app.media.Launch')},
@@ -37,25 +38,43 @@ struct Index {
         }.tabBar(this.tabBarStyle({id:item.id,text:item.text,icon:item.icon}))
 
       })
-    }.width('100%')
+    }
+    .onChange(index=>{
+      this.currentIndex = index;
+    })
+    .width('100%')
   }
 
   //自定义tabBar
   @Builder tabBarStyle($$:{id:number,text:string,icon:Resource}){
     if($$.id===1){
       Badge({
-        value:'1',
+        value:'',
         style:{}
       }){
         Column(){
-          Image($$.icon).width(20)
-          Text($$.text).margin({top:5})
+          if (this.currentIndex === $$.id) {
+            Image($$.icon).width(20)
+              .fillColor(Color.Blue)
+            Text($$.text).margin({top:5})
+              .fontColor(Color.Blue)
+          }else{
+            Image($$.icon).width(20)
+            Text($$.text).margin({top:5})
+          }
         }
       }
     }else{
       Column(){
-        Image($$.icon).width(20)
-        Text($$.text).margin({top:5})
+        if (this.currentIndex === $$.id) {
+          Image($$.icon).width(20)
+            .fillColor(Color.Blue)
+          Text($$.text).margin({top:5})
+            .fontColor(Color.Blue)
+        }else{
+          Image($$.icon).width(20)
+          Text($$.text).margin({top:5})
+        }
       }
     }
   }

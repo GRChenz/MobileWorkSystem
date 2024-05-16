@@ -1,6 +1,6 @@
-import BottomCard from '../../../view/officeWork/bottomCard'
-import MiddleCard from '../../../view/officeWork/middleCard'
-import OfficeWorkHead from '../../../view/officeWork/officeWorkHead'
+import BottomCard from '../../view/officeWork/bottomCard'
+import MiddleCard from '../../view/officeWork/middleCard'
+import OfficeWorkHead from '../../view/officeWork/officeWorkHead'
 
 @Component
 export default struct OfficeWork {

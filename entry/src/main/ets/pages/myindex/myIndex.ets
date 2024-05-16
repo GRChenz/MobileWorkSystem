@@ -1,6 +1,6 @@
-import myIndexCenter from '../../../view/myIndex/myIndexCenter'
-import myIndexHead from '../../../view/myIndex/myIndexHead'
-import myIndexList from '../../../view/myIndex/myIndexList'
+import myIndexCenter from '../../view/myIndex/myIndexCenter'
+import myIndexHead from '../../view/myIndex/myIndexHead'
+import myIndexList from '../../view/myIndex/myIndexList'
 
 
 @Component
