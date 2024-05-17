@@ -1,3 +1,4 @@
+import router from '@ohos.router'
 
 @Component
 export default struct MiddleCard {
@@ -28,13 +29,28 @@ export default struct MiddleCard {
 
 
         Grid(){
-          ForEach(this.featureList,(item)=>{
+          ForEach(this.featureList,(item,index:number)=>{
             GridItem(){
              Column({space:10}){
                Image($r('app.media.sync')).width(40)
                Text(`${item}`)
              }
             }
+            .onClick(()=>{
+              let i:number = index
+              let url:string = ''
+              switch (i) {
+                case 0:
+                  url = "pages/officeWork/myApplication"
+                  break;
+                default:
+                  url = router.getState().path+router.getState().name
+                  break;
+              }
+              router.pushUrl({
+                url:url
+              },router.RouterMode.Single)
+            })
             .height(100)
 
           })
