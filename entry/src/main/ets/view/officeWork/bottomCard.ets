@@ -1,7 +1,17 @@
+import MyListItem from '../../component/myListItem'
+import ApplyList from '../../model/ApplyList'
+
 @Component
 export default struct BottomCard {
-  @State applyList:string[] = ['1'] // 遍历的数组
+  @State applyList:ApplyList[] = [
+    new ApplyList('陈显洪',new Date(),new Date(new Date().setDate(new Date().getDate()+4)),'测试理由',3,1),
+    new ApplyList('陈洪',new Date(),new Date(new Date().setDate(new Date().getDate()+42)),'测试理由',1,2),
+    new ApplyList('显洪',new Date(),new Date(new Date().setDate(new Date().getDate()+51)),'测试理由',2,3),
+    new ApplyList('陈显',new Date(),new Date(new Date().setDate(new Date().getDate()+1)),'测试理由',0,4),
+    new ApplyList('洪显',new Date(),new Date(new Date().setDate(new Date().getDate()+3)),'测试理由',2,5),
 
+
+  ] // 遍历的数组
 
   build() {
     Row(){
@@ -22,56 +32,8 @@ export default struct BottomCard {
         .width('100%')
         Divider().margin({top:10,bottom:10})
 
-        // 下半部分
-        List(){
-          ForEach(this.applyList,(item,index:number)=>{
-            ListItem(){
-              Row(){
-                Column({space:10}){
-                  // 标题位置
-                  Row({space:5}){
-                    Circle({width:14,height:14})
-                      .fill('#444CA5')
-                    Text(`请假申请`)
-                      .fontWeight(FontWeight.Bold)
-                  }
-                  // 正文
-                  Row(){
-                    Text(`2020/11-26 至 2020/11-28 共 3 天`)
-                      .fontSize(14)
-                  }
-                  .padding({left:20})
-
-                  Row(){
-                    Text('申请时间:' + `2022-12-10 17:10`)
-                      .fontSize(14)
-                    Blank()
-                    // 判断条件
-                    if (true) {
-                      Text('待审批')
-                        .fontSize(12)
-                        .fontWeight(FontWeight.Bold)
-                        .fontColor(Color.Orange)
-                    }
-                  }
-                  .width('100%')
-                  .padding({left:20})
-
-                  if (this.applyList.length-1 != index){
-                    Divider()
-                  }
-
-                }
-                .width('100%')
-                .padding({top:10,bottom:10})
-                .alignItems(HorizontalAlign.Start)
-
-
-              }
-              .width('100%')
-            }
-          })
-        }
+        // 下方列表
+        MyListItem({applyList:this.applyList})
 
       }
       .width('90%')

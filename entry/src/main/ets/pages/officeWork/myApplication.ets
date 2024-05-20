@@ -32,6 +32,7 @@ struct MyApplication {
         }.tabBar(this.TabBuilder({index:4,name:"业务相关"}))
 
       }
+      .animationDuration(100)
       .zIndex(10)
       .scrollable(false)
       .onChange((index)=>{

@@ -39,6 +39,8 @@ struct Index {
 
       })
     }
+    .animationDuration(100)
+    .scrollable(false)
     .onChange(index=>{
       this.currentIndex = index;
     })
