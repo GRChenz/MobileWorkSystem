@@ -8,9 +8,11 @@ class DateUtil{
    * @returns
    */
   formatYMD(date:Date):string{
-    let rs:string;
-    rs = date.getFullYear() + "/" + (date.getMonth()+1) + "/" + date.getDate();
-    return rs;
+    date = new Date(date);
+    let year = date.getFullYear();
+    let month = date.getMonth()+1;
+    let day = date.getDate();
+    return year + "/" + month + "/" + day;
   }
 
   /**
@@ -18,14 +20,19 @@ class DateUtil{
    * @param date
    * @returns
    */
-  formatYMD1(date:Date):string{
-    let rs:string;
-    rs = date.getFullYear() + "/" + (date.getMonth()+1) + "-" + date.getDate();
-    return rs;
+  formatYMD1(date:Date):string {
+    date = new Date(date);
+    let year = date.getFullYear();
+    let month = date.getMonth()+1;
+    let day = date.getDate();
+    return year + "/" + month + "-" + day;
   }
 
+
   getDifference(Sdate:Date,Edate:Date):number{
-    let rs = (Edate.getTime()-Sdate.getTime())/1000/60/60/24;
+    Sdate = new Date(Sdate);
+    Edate = new Date(Edate);
+    let rs = (Edate.getTime() - Sdate.getTime())/1000/60/60/24;
     return rs;
   }
 

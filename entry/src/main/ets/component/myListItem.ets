@@ -31,13 +31,10 @@ export default struct MyListItem {
                 Text('申请时间:' + `${item.applyDate?DateUtil.formatYMD(item.applyDate):"未定义申请时间"}`)
                   .fontSize(14)
                 Blank()
-                // 判断条件
-                if (true) {
-                  Text(`${ApplyListUtil.getApproveStatus(item.approveStatus)}`)
-                    .fontSize(12)
-                    .fontWeight(FontWeight.Bold)
-                    .fontColor(`${ApplyListUtil.getApproveStatusColor(item.approveStatus)}`)
-                }
+                Text(`${ApplyListUtil.getApproveStatus(item.approveStatus)}`)
+                  .fontSize(12)
+                  .fontWeight(FontWeight.Bold)
+                  .fontColor(`${ApplyListUtil.getApproveStatusColor(item.approveStatus)}`)
               }
               .width('100%')
               .padding({left:20})
@@ -60,10 +57,4 @@ export default struct MyListItem {
   }
 
 
-  // 卡片样式
-  @Styles cardStyle(){
-    .backgroundColor('#FAFAFA')
-    .padding(10)
-    .borderRadius(10)
-  }
 }

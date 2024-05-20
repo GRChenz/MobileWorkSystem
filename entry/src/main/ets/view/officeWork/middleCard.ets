@@ -1,12 +1,27 @@
 import router from '@ohos.router'
+import ApplyList from '../../model/ApplyList'
 
 @Component
 export default struct MiddleCard {
+  @Consume applyList:ApplyList[]
 
-  @State featureList:string[] = [
-    '请假申请','考勤打卡','汇报','OA审批',
-    '补卡申请','工资单','公司公告','规章制度',
-    'test1','test2','test3','test4','test5']
+  @State featureList:{id:number,name:string,img?:Resource}[] = [
+    {id:0,name:"请假申请",img:$r('app.media.application_leave')},
+    {id:1,name:"考勤打卡",img:$r('app.media.sync')},
+    {id:2,name:"汇报",img:$r('app.media.sync')},
+    {id:3,name:"OA审批",img:$r('app.media.sync')},
+    {id:4,name:"补卡申请",img:$r('app.media.sync')},
+    {id:5,name:"工资单",img:$r('app.media.sync')},
+    {id:6,name:"公司公告",img:$r('app.media.sync')},
+    {id:7,name:"规章制度",img:$r('app.media.sync')},
+    // '请假申请','考勤打卡','汇报','OA审批',
+    // '补卡申请','工资单','公司公告','规章制度',
+  ]
+
+
+  aboutToAppear(){
+    console.log('middleCard','applyList',JSON.stringify(this.applyList));
+  }
 
   build() {
     Row(){
@@ -32,23 +47,26 @@ export default struct MiddleCard {
           ForEach(this.featureList,(item,index:number)=>{
             GridItem(){
              Column({space:10}){
-               Image($r('app.media.sync')).width(40)
-               Text(`${item}`)
+               Image(item.img).width(40)
+               Text(`${item.name}`)
              }
             }
             .onClick(()=>{
-              let i:number = index
+              let i:number = item.id
               let url:string = ''
+              let params:any
               switch (i) {
                 case 0:
                   url = "pages/officeWork/myApplication"
+                  params = this.applyList
                   break;
                 default:
                   url = router.getState().path+router.getState().name
                   break;
               }
               router.pushUrl({
-                url:url
+                url:url,
+                params:params
               },router.RouterMode.Single)
             })
             .height(100)
@@ -88,10 +106,10 @@ export default struct MiddleCard {
   }
 
   // 拖拽后的样式
-  @Builder drag($$:{text:string}){
+  @Builder drag($$:{text:{name:string,img?:Resource}}){
     Column({space:10}){
-      Image($r('app.media.sync')).width(40)
-      Text(`${$$.text}`)
+      Image($$.text.img).width(40)
+      Text(`${$$.text.name}`)
     }
   }
 
