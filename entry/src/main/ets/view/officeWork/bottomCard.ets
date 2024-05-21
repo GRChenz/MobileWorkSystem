@@ -1,3 +1,4 @@
+import router from '@ohos.router'
 import MyListItem from '../../component/myListItem'
 import ApplyList from '../../model/ApplyList'
 
@@ -17,6 +18,12 @@ export default struct BottomCard {
             .fontSize(20)
           Blank()
           Text('更多')
+            .onClick(()=>{
+              router.pushUrl({
+                url:"pages/officeWork/myApplication",
+                params:this.applyList
+              },router.RouterMode.Single)
+            })
             .fontColor('#868686')
           Text('>')
             .fontColor('#cccccc')

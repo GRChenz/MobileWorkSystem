@@ -3,6 +3,7 @@
     "pages/Index",
     "pages/PreviewIndex",
     "pages/login/login",
-    "pages/officeWork/myApplication"
+    "pages/officeWork/myApplication",
+    "pages/officeWork/applicationLeave"
   ]
 }

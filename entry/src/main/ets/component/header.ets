@@ -11,7 +11,6 @@ export default struct Header {
             router.back()
           })
       }
-      .layoutWeight(1)
       Row(){
         Text(this.title==''?'title未定义':this.title)
           .fontSize(25)
@@ -20,9 +19,8 @@ export default struct Header {
       .justifyContent(FlexAlign.Center)
       .layoutWeight(1)
       Row(){
-        Text()
       }
-      .layoutWeight(1)
+      .width(30)
     }
     .width('100%')
   }

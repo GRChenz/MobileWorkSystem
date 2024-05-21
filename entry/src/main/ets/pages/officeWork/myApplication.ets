@@ -23,45 +23,46 @@ struct MyApplication {
     if (params) {
       this.applyList = params;
     }
-    console.log("myApplication","applyList",JSON.stringify(this.applyList))
-    console.log("myApplication","applyList.startDate type",typeof this.applyList[0].startDate)
   }
 
   build() {
     Column(){
       Header({title:this.title})
+        .zIndex(100)
+        .padding(10)
       Tabs(){
         TabContent(){
           // Text('全部申请界面')
           MyListItem({applyList:this.applyList})
+            .ItemListStyle()
 
         }
-        .align(Alignment.Top)
+        .TabContentStyle()
         .tabBar(this.TabBuilder({index:0,name:"全部"}))
         TabContent(){
           Text('人事管理界面')
         }
-        .align(Alignment.Top)
+        .TabContentStyle()
         .tabBar(this.TabBuilder({index:1,name:"人事管理"}))
         TabContent(){
           Text('行政事务界面')
         }
-        .align(Alignment.Top)
+        .TabContentStyle()
         .tabBar(this.TabBuilder({index:2,name:"行政事务"}))
         TabContent(){
           Text('财务类界面')
         }
-        .align(Alignment.Top)
+        .TabContentStyle()
         .tabBar(this.TabBuilder({index:3,name:"财务类"}))
         TabContent(){
           Text('业务相关界面')
         }
-        .align(Alignment.Top)
+        .TabContentStyle()
         .tabBar(this.TabBuilder({index:4,name:"业务相关"}))
 
       }
       .barMode(BarMode.Fixed)
-      .animationDuration(100)
+      .animationDuration(200)
       .zIndex(10)
       .scrollable(false)
       .onChange((index)=>{
@@ -69,7 +70,6 @@ struct MyApplication {
       })
 
     }
-    .padding(10)
     .align(Alignment.Top)
   }
 
@@ -91,4 +91,19 @@ struct MyApplication {
         .opacity(this.currentIndex === $$.index ? 1 : 0)
     }.width('100%')
   }
+
+
+  @Styles TabContentStyle(){
+    .align(Alignment.Top)
+    .backgroundColor('#f1f1f1')
+  }
+
+  @Styles ItemListStyle(){
+    .backgroundColor(Color.White)
+    .padding(10)
+    .margin(10)
+    .borderRadius(5)
+  }
+
+
 }

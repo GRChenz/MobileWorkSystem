@@ -44,7 +44,7 @@ export default struct MiddleCard {
 
 
         Grid(){
-          ForEach(this.featureList,(item,index:number)=>{
+          ForEach(this.featureList,(item:{id:number,name:string,img?:Resource},index:number)=>{
             GridItem(){
              Column({space:10}){
                Image(item.img).width(40)
@@ -57,13 +57,17 @@ export default struct MiddleCard {
               let params:any
               switch (i) {
                 case 0:
-                  url = "pages/officeWork/myApplication"
-                  params = this.applyList
+                  url = "pages/officeWork/applicationLeave"
+                  params = {
+                    title:item.name
+                  }
                   break;
                 default:
                   url = router.getState().path+router.getState().name
                   break;
               }
+
+              // 跳转到对应id的界面
               router.pushUrl({
                 url:url,
                 params:params

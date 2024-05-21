@@ -56,5 +56,17 @@ export default struct MyListItem {
     }
   }
 
+  @Styles ItemListStyle(){
+    .backgroundColor(Color.White)
+    .padding(10)
+    .margin(10)
+    .borderRadius(5)
+  }
+
+
+
+
+
 
 }
+
