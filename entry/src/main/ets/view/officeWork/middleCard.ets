@@ -7,7 +7,7 @@ export default struct MiddleCard {
 
   @State featureList:{id:number,name:string,img?:Resource}[] = [
     {id:0,name:"请假申请",img:$r('app.media.application_leave')},
-    {id:1,name:"考勤打卡",img:$r('app.media.sync')},
+    {id:1,name:"考勤打卡",img:$r('app.media.daka')},
     {id:2,name:"汇报",img:$r('app.media.sync')},
     {id:3,name:"OA审批",img:$r('app.media.sync')},
     {id:4,name:"补卡申请",img:$r('app.media.sync')},
@@ -58,6 +58,12 @@ export default struct MiddleCard {
               switch (i) {
                 case 0:
                   url = "pages/officeWork/applicationLeave"
+                  params = {
+                    title:item.name
+                  }
+                  break;
+                case 1:
+                  url = "pages/officeWork/attendance"
                   params = {
                     title:item.name
                   }
