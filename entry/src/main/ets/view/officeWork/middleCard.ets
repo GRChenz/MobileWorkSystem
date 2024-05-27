@@ -53,20 +53,18 @@ export default struct MiddleCard {
             }
             .onClick(()=>{
               let i:number = item.id
-              let url:string = ''
-              let params:any
+              let url:string = '';
+              let params:any = {};
+              Object.assign(params,{title:item.name})
               switch (i) {
                 case 0:
                   url = "pages/officeWork/applicationLeave"
-                  params = {
-                    title:item.name
-                  }
                   break;
                 case 1:
                   url = "pages/officeWork/attendance"
-                  params = {
-                    title:item.name
-                  }
+                  break;
+                case 5:
+                  url = "pages/officeWork/payroll"
                   break;
                 default:
                   url = router.getState().path+router.getState().name

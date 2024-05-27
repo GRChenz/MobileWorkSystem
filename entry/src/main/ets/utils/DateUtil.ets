@@ -28,6 +28,19 @@ class DateUtil{
     return year + "/" + month + "-" + day;
   }
 
+  /**
+   * 第三种将时间转换为年月日格式的方法
+   * @param date
+   * @returns
+   */
+  formatYMD2(date:Date):string {
+    date = new Date(date);
+    let year = date.getFullYear();
+    let month = date.getMonth()+1;
+    let day = date.getDate();
+    return year + "-" + month + "-" + day;
+  }
+
 
   getDifference(Sdate:Date,Edate:Date):number{
     Sdate = new Date(Sdate);

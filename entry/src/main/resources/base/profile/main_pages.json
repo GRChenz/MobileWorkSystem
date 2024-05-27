@@ -5,6 +5,7 @@
     "pages/login/login",
     "pages/officeWork/myApplication",
     "pages/officeWork/applicationLeave",
-    "pages/officeWork/attendance"
+    "pages/officeWork/attendance",
+    "pages/officeWork/payroll"
   ]
 }
