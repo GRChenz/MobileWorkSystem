@@ -41,6 +41,13 @@ class DateUtil{
     return year + "-" + month + "-" + day;
   }
 
+  formatYM(date:Date):string {
+    date = new Date(date);
+    let year = date.getFullYear();
+    let month = date.getMonth()+1;
+    return year + "年" + month + "月";
+  }
+
 
   getDifference(Sdate:Date,Edate:Date):number{
     Sdate = new Date(Sdate);

@@ -138,6 +138,14 @@ struct Payroll {
 
                   Divider().width("95%").color('#f5f5f5')
                 }
+                .onClick(()=>{
+                  router.pushUrl({
+                    url:router.getState().path+"detailedPayroll",
+                    params:{
+                      item:item.item,
+                    }
+                  },router.RouterMode.Single)
+                })
               }
 
 
