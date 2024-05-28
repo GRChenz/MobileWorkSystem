@@ -6,4 +6,6 @@ export default class groupInfo<T,I>{
     this.group = group;
     this.item = item;
   }
+
+
 }

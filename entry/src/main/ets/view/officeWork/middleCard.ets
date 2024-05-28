@@ -11,7 +11,7 @@ export default struct MiddleCard {
     {id:2,name:"汇报",img:$r('app.media.sync')},
     {id:3,name:"OA审批",img:$r('app.media.sync')},
     {id:4,name:"补卡申请",img:$r('app.media.sync')},
-    {id:5,name:"工资单",img:$r('app.media.sync')},
+    {id:5,name:"工资单",img:$r('app.media.salaryLogo')},
     {id:6,name:"公司公告",img:$r('app.media.sync')},
     {id:7,name:"规章制度",img:$r('app.media.sync')},
     // '请假申请','考勤打卡','汇报','OA审批',

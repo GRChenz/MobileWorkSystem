@@ -6,12 +6,19 @@ export default class salaryList{
   salary:number;  // 总工资
 }
 
-const month:number[] = [
+export const month:number[] = [
   12,11,10,9,8,7,6,5,4,3,2,1
 ]
 
 
 export const list:salaryList[] = [
+  {salary:6900,date:new Date("2024-1-10")},
+  {salary:6900,date:new Date("2024-2-10")},
+  {salary:6900,date:new Date("2024-3-10")},
+  {salary:6900,date:new Date("2024-4-10")},
+  {salary:6900,date:new Date("2023-1-10")},
+  {salary:6900,date:new Date("2023-3-10")},
+  {salary:6900,date:new Date("2023-5-10")},
   {salary:6900,date:new Date("2022-1-10")},
   {salary:8000,date:new Date("2022-2-10")},
   {salary:7000,date:new Date("2022-3-10")},
