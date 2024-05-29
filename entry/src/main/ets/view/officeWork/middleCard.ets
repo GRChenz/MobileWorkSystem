@@ -12,7 +12,7 @@ export default struct MiddleCard {
     {id:3,name:"OA审批",img:$r('app.media.sync')},
     {id:4,name:"补卡申请",img:$r('app.media.sync')},
     {id:5,name:"工资单",img:$r('app.media.salaryLogo')},
-    {id:6,name:"公司公告",img:$r('app.media.sync')},
+    {id:6,name:"公司公告",img:$r('app.media.announcement_logo')},
     {id:7,name:"规章制度",img:$r('app.media.sync')},
     // '请假申请','考勤打卡','汇报','OA审批',
     // '补卡申请','工资单','公司公告','规章制度',
@@ -55,7 +55,7 @@ export default struct MiddleCard {
               let i:number = item.id
               let url:string = '';
               let params:any = {};
-              Object.assign(params,{title:item.name})
+              Object.assign(params,{title:item.name})  // 新增一个KV
               switch (i) {
                 case 0:
                   url = "pages/officeWork/applicationLeave"
@@ -65,6 +65,9 @@ export default struct MiddleCard {
                   break;
                 case 5:
                   url = "pages/officeWork/payroll"
+                  break;
+                case 6:
+                  url = "pages/officeWork/announcement/announcement"
                   break;
                 default:
                   url = router.getState().path+router.getState().name

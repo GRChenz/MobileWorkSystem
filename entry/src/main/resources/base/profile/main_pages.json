@@ -7,6 +7,8 @@
     "pages/officeWork/applicationLeave",
     "pages/officeWork/attendance",
     "pages/officeWork/payroll",
-    "pages/officeWork/detailedPayroll"
+    "pages/officeWork/detailedPayroll",
+    "pages/officeWork/announcement/announcement",
+    "pages/officeWork/announcement/announcementDetail"
   ]
 }

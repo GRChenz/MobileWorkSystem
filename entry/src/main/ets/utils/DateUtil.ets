@@ -49,10 +49,10 @@ class DateUtil{
   }
 
 
-  getDifference(Sdate:Date,Edate:Date):number{
+  getDifference(Sdate:Date,Edate:Date){
     Sdate = new Date(Sdate);
     Edate = new Date(Edate);
-    let rs = (Edate.getTime() - Sdate.getTime())/1000/60/60/24;
+    let rs = ((Edate.getTime() - Sdate.getTime())/1000/60/60/24);
     return rs;
   }
 
